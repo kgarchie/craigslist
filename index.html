@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div id="container">
         <div id="main-wrapper" class="fancy-scrollbar">
-            <div id="main">
                 <div id="nav">
                     <a class="nav-logo" href="#">
                         <i class="fa-solid fa-hand-peace"></i>
                     </a>
                     <div class="nav-info">
                         <button class="nav-info-selection-button" type="button">
-                            <h2 class="nav-location-label">Portland, OR</h2>
-                            <h2 class="nav-category-label">Antiques</h2>
+                            <h2 class="nav-location-label">Kenya, KE</h2>
+                            <h2 class="nav-category-label">Kiambu</h2>
                         </button>
                     </div>
                     <button class="nav-sign-in-button" type="button">
@@ -37,20 +36,16 @@
                             </button>
                         </div>
                     </div>
-                    <div class="header-row">
+                    <div class="header-row filters">
                         <div class="header-options">
                             <div class="header-option view">
                                 <div class="header-option-choices">
-                                    <button class="header-option-choice" data-selected="true" type="button">
-                                        <i class="fa-regular fa-grid-2"></i>
+                                    <button class="header-option-choice icon" data-selected="true" type="button">
+                                        <img src="svg/grid.svg">
                                     </button>
                                     <button class="header-option-choice" type="button">
                                         <i class="fa-solid fa-list"></i>
                                     </button>
-                                    <a href="" target="_blank"
-                                        class="header-option-choice" title="Click me">
-                                        <i class="fa-brands fa-youtube"></i>
-                                    </a>
                                 </div>
                                 <h3 class="header-option-label">View</h3>
                             </div>
@@ -64,37 +59,38 @@
                                 <h3 class="header-option-label">Sort</h3>
                             </div>
                             <div class="header-option">
-                                <button class="header-option-toggle header-button" type="button">
-                                    <i class="fa-regular fa-sliders"></i>
+                                <button class="header-option-toggle header-button icon" type="button">
+                                    <img src="svg/options.svg" alt="" srcset="">
                                     <span>Options</span>
                                 </button>
+                            </div>
+                        </div>
+                        <div id="content-listings-header-wrapper">
+                            <div id="content-listings-header">
+                                <div class="content-listings-pagination">
+                                    <button class="content-pagination-button double-back" type="button">
+                                        <i class="fa fa-chevron-left"></i>
+                                        <i class="fa fa-chevron-left"></i>
+                                    </button>
+                                    <button class="content-pagination-button back" type="button">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </button>
+                                    <h3 class="content-pagination-label"><span class="accent-text">Page</span>1 / 12</h3>
+                                    <button class="content-pagination-button forward" type="button">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </button>
+                                    <button class="content-pagination-button save-search" type="button">
+                                        Save Search
+                                    </button>
+                                </div>
+                                <h3 class="content-listings-pagination-quantity-label"><span
+                                        class="accent-text">Showing</span> 1 - 100 <span class="accent-text">of</span> 1147
+                                </h3>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="content">
-                    <div id="content-listings-header-wrapper">
-                        <div id="content-listings-header">
-                            <div class="content-listings-pagination">
-                                <button class="content-pagination-button double-back" type="button">
-                                    <i class="fa-regular fa-chevrons-left"></i>
-                                </button>
-                                <button class="content-pagination-button back" type="button">
-                                    <i class="fa-regular fa-chevron-left"></i>
-                                </button>
-                                <h3 class="content-pagination-label"><span class="accent-text">Page</span>1 / 12</h3>
-                                <button class="content-pagination-button forward" type="button">
-                                    <i class="fa-regular fa-chevron-right"></i>
-                                </button>
-                                <button class="content-pagination-button save-search" type="button">
-                                    Save Search
-                                </button>
-                            </div>
-                            <h3 class="content-listings-pagination-quantity-label"><span
-                                    class="accent-text">Showing</span> 1 - 100 <span class="accent-text">of</span> 1147
-                            </h3>
-                        </div>
-                    </div>
                     <div id="content-listings">
                         <div class="listing">
                             <div class="listing-images">
@@ -123,9 +119,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+        
         </div>
-    </div>
     <script src="main.js"></script>
 </body>
 
