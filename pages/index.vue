@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <Title>Home</Title>
   <div id="main-wrapper" class="fancy-scrollbar">
@@ -8,7 +5,3 @@
     <Content/>
   </div>
 </template>
-
-<style scoped>
-
-</style>

@@ -25,8 +25,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import {PropType} from 'vue'
-
 defineProps({
   item: {
     type: Object as PropType<{

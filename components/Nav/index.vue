@@ -1,13 +1,13 @@
 <template>
     <div id="nav">
-        <RouterLink to="/" class="nav-logo">
+        <NuxtLink to="/" class="nav-logo">
             <i class="fa-solid fa-hand-peace"></i>
-        </RouterLink>
+        </NuxtLink>
         <div class="nav-info">
-            <RouterLink to="/" class="nav-info-selection-button" type="button">
+            <NuxtLink to="/" class="nav-info-selection-button" type="button">
                 <span class="nav-location-label">Kenya, KE</span>
                 <span class="nav-category-label">Kiambu</span>
-            </RouterLink>
+            </NuxtLink>
         </div>
         <button class="nav-sign-in-button" type="button">
             <img class="profile-pic" @click="showProfilePopUpMenu = !showProfilePopUpMenu"

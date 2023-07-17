@@ -38,10 +38,10 @@ defineProps({
           <i class="fa fa-cog"></i>
           <h3 class="pop-up-menu-content-footer-item-label">Settings</h3>
         </div>
-        <RouterLink to="/about" class="pop-up-menu-content-footer-item">
+        <NuxtLink to="/about" class="pop-up-menu-content-footer-item">
           <i class="fa fa-question-circle"></i>
           <h3 class="pop-up-menu-content-footer-item-label">About</h3>
-        </RouterLink>
+        </NuxtLink>
       </div>
     </div>
   </div>
