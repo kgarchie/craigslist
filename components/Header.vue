@@ -44,14 +44,14 @@
         </div>
         <div class="header-option">
           <button class="header-option-toggle header-button icon" type="button">
-            <img src="../assets/svg/options.svg" alt="" srcset="">
+            <img src="/assets/svg/options.svg" alt="" srcset="">
             <span>Options</span>
           </button>
         </div>
         <div class="header-option view">
           <div class="header-option-choices">
             <button class="header-option-choice icon" data-selected="true" type="button">
-              <img src="../assets/svg/grid.svg" alt="+">
+              <img src="/assets/svg/grid.svg" alt="+">
             </button>
             <button class="header-option-choice" type="button">
               <i class="fa-solid fa-list"></i>

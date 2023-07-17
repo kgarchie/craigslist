@@ -13,13 +13,10 @@
             <img class="profile-pic" @click="showProfilePopUpMenu = !showProfilePopUpMenu"
                 src="https://images.unsplash.com/photo-1624956578877-4948166c5dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGFwcHklMjBkb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                 alt="Profile Image">
-            <PopUp :show="showProfilePopUpMenu" @close="showProfilePopUpMenu = !showProfilePopUpMenu" />
+            <NavPopUp :show="showProfilePopUpMenu" @close="showProfilePopUpMenu = !showProfilePopUpMenu" />
         </button>
     </div>
 </template>
 <script setup lang="ts">
-import PopUp from "./PopUp.vue";
-import { ref } from "vue";
-
 const showProfilePopUpMenu = ref(false);
 </script>
