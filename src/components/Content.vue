@@ -1,7 +1,20 @@
-const listings = document.getElementById("content-listings"),
-      listing = listings.getElementsByClassName("listing")[0];
+<template>
+  <div id="content">
+    <div id="content-listings">
+      <Listing v-for="item in items" :item="item"/>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import {reactive} from 'vue'
+import Listing from './Listing/index.vue'
 
-const items = [{
+const items = reactive([{
+  img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+  title: "House between the trees",
+  date: "Y-Day",
+  price: "2.5 M"
+}, {
   img: "https://images.unsplash.com/photo-1662304729380-3a7ffb361e63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
   title: "I put white out on this. It looks antique now.",
   date: "Aug 24",
@@ -31,22 +44,5 @@ const items = [{
   date: "June 5",
   location: "Newberg",
   price: 22
-}];
-
-for(let i = 0; i < 5; i++) {
-  const clone = listing.cloneNode(true),  
-        image = clone.getElementsByClassName("listing-image")[0],
-        title = clone.getElementsByClassName("listing-info-title")[0],
-        date = clone.getElementsByClassName("listing-info-date")[0],
-        location = clone.getElementsByClassName("listing-info-location")[0],
-        price = clone.getElementsByClassName("listing-price-value")[0],
-        item = items[i];
-  
-  image.src = item.img;  
-  title.innerText = item.title;  
-  date.innerText = item.date;  
-  location.innerText = item.location;
-  price.innerText = item.price;
-  
-  listings.appendChild(clone);
-}
+}])
+</script>
