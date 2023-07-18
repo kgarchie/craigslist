@@ -8,7 +8,6 @@ export type User = {
     role: string;
     avatar?: string;
     quote: string;
-    text: string;
 }
 
 export function getUsers(): User[] {
@@ -23,8 +22,7 @@ export function getUsers(): User[] {
             email: data[1]?.split(':')[1]?.trim() ?? '',
             password: data[2]?.split(':')[1]?.trim() ?? '',
             role: data[3]?.split(':')[1]?.trim() ?? '',
-            quote: data[5]?.split(':')[1]?.trim() ?? '',
-            text: data?.slice(6)?.join('\n') ?? '',
+            quote: data[5]?.split(':')[1]?.trim() ?? ''
         }
 
         user.avatar = `../assets/profiles/${profile}/pic.jpeg`;

@@ -50,10 +50,11 @@
         </div>
         <div class="header-option view">
           <div class="header-option-choices">
-            <button class="header-option-choice icon" data-selected="true" type="button">
-              <img src="/assets/svg/grid.svg" alt="+">
+            <button class="header-option-choice icon" type="button" @click="emmitView(false)" :class="{ active: !view }">
+              <img src="/assets/svg/grid.svg" alt="+" v-if="!view">
+              <img src="/assets/svg/grid-light.svg" alt="+" v-else>
             </button>
-            <button class="header-option-choice" type="button">
+            <button class="header-option-choice" type="button" @click="emmitView(true)" :class="{ active: view }">
               <i class="fa-solid fa-list"></i>
             </button>
           </div>
@@ -63,3 +64,11 @@
     </div>
   </div>
 </template>
+<script setup lang="ts">
+const view = ref<boolean>(false)
+const emits = defineEmits(['view'])
+function emmitView(newView: boolean) {
+  view.value = newView
+  emits('view', newView)
+}
+</script>

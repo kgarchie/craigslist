@@ -9,7 +9,7 @@
         <h3 class="listing-info-details">
           <span class="listing-info-date">{{ item.date }}</span>
           <span>·</span>
-          <span class="listing-info-location">{{ item.location }}</span>
+          <span class="listing-info-location">{{ item?.location }}</span>
         </h3>
       </div>
     </div>
