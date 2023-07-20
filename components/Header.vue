@@ -2,7 +2,7 @@
   <div id="header">
     <div class="header-row">
       <div class="header-search-bar">
-        <input class="header-search-bar-input" type="search" placeholder="Search"/>
+        <input class="header-search-bar-input" type="search" placeholder="Search" v-model="search">
         <button class="header-search-bar-button" type="button">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -65,10 +65,24 @@
   </div>
 </template>
 <script setup lang="ts">
+const search = ref<string>('')
 const view = ref<boolean>(false)
-const emits = defineEmits(['view'])
+const emits = defineEmits(['view', 'search'])
 function emmitView(newView: boolean) {
   view.value = newView
   emits('view', newView)
 }
+
+const props = defineProps({
+  listView: {
+    type: Boolean,
+    default: false,
+    required: false
+  }
+})
+
+view.value = props.listView
+watch(search, (newSearch) => {
+  emits('search', newSearch)
+})
 </script>

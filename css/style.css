@@ -4,7 +4,7 @@
   --font-color: rgb(20, 20, 20);
   --lighter-font-color: rgb(80, 80, 80);
   --highlight-color: rgb(33, 150, 243);
-  --yellow: rgb(253, 216, 53);
+  --yellow: rgba(253, 216, 53, 0.63);
   --purple: rgb(69, 39, 160);
   --body-color: rgb(30, 40, 50);
 
@@ -47,6 +47,10 @@ a {
   font-size: 1rem;
   font-weight: 400;
   margin: 0px;
+}
+
+a{
+    text-decoration: none;
 }
 
 .highlight {

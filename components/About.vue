@@ -7,6 +7,16 @@
       <p class="email">{{ user.email }}</p>
       <div>
         <h3 class="quote">{{ user.quote }}</h3>
+        <div class="links">
+          <NuxtLink :to="user.github" target="_blank" :external="true" class="github">
+            <span>GitHub</span>
+            <i class="fab fa-github"></i>
+          </NuxtLink>
+          <NuxtLink :to="user.linkedin" target="_blank" :external="true" class="linkedin">
+            <span>LinkedIn</span>
+            <i class="fab fa-linkedin"></i>
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>
@@ -16,7 +26,7 @@ import {User} from "~/db/users";
 
 const users = ref<User[]>([])
 const response = await $fetch('/api/users') as { statusCode: number, users: User[] }
-if (response.statusCode === 200) users.value = response.users
+if (response?.statusCode === 200) users.value = response.users
 </script>
 
 <style scoped lang="scss">
@@ -36,17 +46,15 @@ if (response.statusCode === 200) users.value = response.users
     align-items: center;
     margin: 1rem;
     width: 300px;
-    height: 400px;
     font-family: "Rubik", sans-serif;
     background-color: rgba(69, 39, 160, 0.5);
     border-radius: 1rem;
-    box-shadow: 0 10px 50px rgba(100, 200, 200, 0.2);
+    box-shadow: 5px 5px 20px rgba(69, 39, 160, 1);
 
     transition: background-color 0.2s ease-in-out, scale 0.2s ease-in-out;
 
     &:hover {
       background-color: rgba(69, 39, 160, 0.8);
-      scale: 1.02;
       cursor: pointer;
     }
 
@@ -77,7 +85,6 @@ if (response.statusCode === 200) users.value = response.users
       font-size: 1rem;
       font-weight: 400;
       color: #afafaf;
-      margin-bottom: 1rem;
     }
 
     >div{
@@ -96,6 +103,51 @@ if (response.statusCode === 200) users.value = response.users
         &::after {
           content: close-quote;
           font-size: 2rem;
+        }
+      }
+
+      .links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        a{
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          text-decoration: none;
+          background-color: rgba(253, 216, 53, 0.7);
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          margin: 0 0.5rem;
+
+          &.github{
+            background-color: rgba(13, 17, 23, 0.7);
+
+            &:hover{
+              background-color: rgba(13, 17, 23, 1);
+            }
+          }
+
+          &.linkedin{
+            background-color: rgba(0, 119, 181, 0.7);
+
+            &:hover{
+              background-color: rgba(0, 119, 181, 1);
+            }
+          }
+        }
+
+        span{
+          font-size: 1.05rem;
+          font-weight: 600;
+          color: white;
+        }
+
+        i{
+          font-size: 1.5rem;
+          color: white;
         }
       }
     }

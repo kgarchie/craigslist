@@ -6,8 +6,11 @@ export type User = {
     email: string;
     password: string;
     role: string;
-    avatar?: string;
+    avatar: string;
     quote: string;
+    text: string;
+    github: string;
+    linkedin: string;
 }
 
 export function getUsers(): User[] {
@@ -17,17 +20,23 @@ export function getUsers(): User[] {
     for (const folder in profiles) {
         const profile = profiles[folder];
         const data = fs.readFileSync(`./public/assets/profiles/${profile}/${profile}.txt`, 'utf-8').split('\n');
-        const user: User = {
+
+        let user: Omit<User, 'avatar'> = {
             name: data[0]?.split(':')[1]?.trim() ?? '',
             email: data[1]?.split(':')[1]?.trim() ?? '',
             password: data[2]?.split(':')[1]?.trim() ?? '',
             role: data[3]?.split(':')[1]?.trim() ?? '',
-            quote: data[5]?.split(':')[1]?.trim() ?? ''
+            quote: data[4]?.split(':')[1]?.trim() ?? '',
+            text: data[5]?.split(':')[1]?.trim() ?? '',
+            linkedin: data[6]?.split(/:(.+)/)[1]?.trim() ?? '',
+            github: data[7]?.split(/:(.+)/)[1]?.trim() ?? '',
         }
 
-        user.avatar = `../assets/profiles/${profile}/pic.jpeg`;
-
-        users.push(user);
+        user = {
+            ...user,
+            avatar: `../assets/profiles/${profile}/pic.jpeg`
+        } as User;
+        users.push(user as User);
     }
 
     return users;

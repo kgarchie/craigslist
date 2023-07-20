@@ -4,3 +4,5 @@ Password: em.em
 Role: Analyst
 Quote: Be micro-ambitious
 Text: One step at a time
+LinkedIn: https://linkedin.com/in/emily-muriuki-01807520a
+GitHub: https://github.com/nkiro
