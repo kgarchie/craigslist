@@ -26,19 +26,18 @@ defineProps({
           <h3 class="pop-up-menu-content-body-profile-email">john@gmail.com</h3>
         </div>
         <div class="pop-up-menu-content-body-actions">
-
         </div>
       </div>
       <div class="pop-up-menu-content-footer">
-        <div class="pop-up-menu-content-footer-item">
+        <div class="pop-up-menu-content-footer-item" @click="$emit('close')">
           <i class="fa fa-sign-out"></i>
           <h3 class="pop-up-menu-content-footer-item-label">Logout</h3>
         </div>
-        <div class="pop-up-menu-content-footer-item">
+        <div class="pop-up-menu-content-footer-item" @click="$emit('close')">
           <i class="fa fa-cog"></i>
           <h3 class="pop-up-menu-content-footer-item-label">Settings</h3>
         </div>
-        <NuxtLink to="/about" class="pop-up-menu-content-footer-item">
+        <NuxtLink to="/about" class="pop-up-menu-content-footer-item" @click="$emit('close')">
           <i class="fa fa-question-circle"></i>
           <h3 class="pop-up-menu-content-footer-item-label">About</h3>
         </NuxtLink>
@@ -135,8 +134,10 @@ defineProps({
   display: flex;
   width: 50%;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
 
 .pop-up-menu-content-footer-item:hover {

@@ -1,0 +1,8 @@
+Name: Fidel Castro Mbeo
+Email: fidelcastrombeo@gmail.com
+Password: 123456789
+Role: Designer
+Quote: It's all in the detail.
+Text: Make it make sense.
+LinkedIn: https://www.linkedin.com/in/fidel-mbeo-a70bba22a/
+Github: https://github.com/Tech-Phenom

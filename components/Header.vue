@@ -2,7 +2,7 @@
   <div id="header">
     <div class="header-row">
       <div class="header-search-bar">
-        <input class="header-search-bar-input" type="search" placeholder="Search"/>
+        <input class="header-search-bar-input" type="search" placeholder="Search" v-model="search">
         <button class="header-search-bar-button" type="button">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -50,10 +50,11 @@
         </div>
         <div class="header-option view">
           <div class="header-option-choices">
-            <button class="header-option-choice icon" data-selected="true" type="button">
-              <img src="/assets/svg/grid.svg" alt="+">
+            <button class="header-option-choice icon" type="button" @click="emmitView(false)" :class="{ active: !view }">
+              <img src="/assets/svg/grid.svg" alt="+" v-if="!view">
+              <img src="/assets/svg/grid-light.svg" alt="+" v-else>
             </button>
-            <button class="header-option-choice" type="button">
+            <button class="header-option-choice" type="button" @click="emmitView(true)" :class="{ active: view }">
               <i class="fa-solid fa-list"></i>
             </button>
           </div>
@@ -63,3 +64,25 @@
     </div>
   </div>
 </template>
+<script setup lang="ts">
+const search = ref<string>('')
+const view = ref<boolean>(false)
+const emits = defineEmits(['view', 'search'])
+function emmitView(newView: boolean) {
+  view.value = newView
+  emits('view', newView)
+}
+
+const props = defineProps({
+  listView: {
+    type: Boolean,
+    default: false,
+    required: false
+  }
+})
+
+view.value = props.listView
+watch(search, (newSearch) => {
+  emits('search', newSearch)
+})
+</script>
