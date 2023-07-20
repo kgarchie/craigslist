@@ -5,6 +5,7 @@
       <img :src="user.avatar" alt="team member"/>
       <h3 class="name">{{ user.name }}</h3>
       <p class="email">{{ user.email }}</p>
+      <span class="role">{{user.role}}</span>
       <div>
         <h3 class="quote">{{ user.quote }}</h3>
         <div class="links">
@@ -50,6 +51,7 @@ if (response?.statusCode === 200) users.value = response.users
     background-color: rgba(69, 39, 160, 0.5);
     border-radius: 1rem;
     box-shadow: 5px 5px 20px rgba(69, 39, 160, 1);
+    position: relative;
 
     transition: background-color 0.2s ease-in-out, scale 0.2s ease-in-out;
 
@@ -85,6 +87,13 @@ if (response?.statusCode === 200) users.value = response.users
       font-size: 1rem;
       font-weight: 400;
       color: #afafaf;
+    }
+
+    .role{
+      color: #ccc;
+      background-color: rgb(13, 17, 23);
+      padding: 0.25rem 0.5rem;
+      font-size: 1rem;
     }
 
     >div{
