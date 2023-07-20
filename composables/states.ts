@@ -11,7 +11,7 @@ export const useItems = () => useState('items', () => [{
     img: "https://images.unsplash.com/photo-1662304729380-3a7ffb361e63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
     title: "I put white out on this. It looks antique now.",
     date: "Aug 24",
-    location: "South Hills",
+    location: "Pale Kwa Mat",
     price: 97,
     category: "Antiques"
 }, {

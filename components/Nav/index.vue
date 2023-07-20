@@ -1,11 +1,11 @@
 <template>
     <div id="nav">
         <NuxtLink to="/" class="nav-logo">
-            <i class="fa-solid fa-hand-peace"></i>
+            <img src="/favicon.ico" class="logo">
         </NuxtLink>
         <div class="nav-info">
             <NuxtLink to="/" class="nav-info-selection-button" type="button">
-                <span class="nav-location-label">Kenya, KE</span>
+                <span class="nav-location-label">Akatsuki</span>
                 <span class="nav-category-label">Kiambu</span>
             </NuxtLink>
         </div>
@@ -20,3 +20,9 @@
 <script setup lang="ts">
 const showProfilePopUpMenu = ref(false);
 </script>
+<style lang="scss">
+.logo{
+    width: 100px;
+    aspect-ratio: 4/3;
+}
+</style>
