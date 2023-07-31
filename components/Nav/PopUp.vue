@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {lang} from "~/types";
+
 defineProps({
   show: {
     type: Boolean,
@@ -6,13 +8,15 @@ defineProps({
   },
 });
 
+const language = useLanguage()
 </script>
 
 <template>
   <div id="pop-up-menu" v-if="show">
     <div class="pop-up-menu-content">
       <div class="pop-up-menu-content-header">
-        <h3 class="pop-up-menu-content-header-label">Profile</h3>
+        <h3 class="pop-up-menu-content-header-label" v-if="language === lang.en">Profile</h3>
+        <h3 class="pop-up-menu-content-header-label" v-if="language === lang.sw">Profaili</h3>
         <button class="pop-up-menu-content-header-close-button" type="button" @click="$emit('close')">
           <i class="fa fa-times"></i>
         </button>
@@ -31,15 +35,18 @@ defineProps({
       <div class="pop-up-menu-content-footer">
         <div class="pop-up-menu-content-footer-item" @click="$emit('close')">
           <i class="fa fa-sign-out"></i>
-          <h3 class="pop-up-menu-content-footer-item-label">Logout</h3>
+          <h3 class="pop-up-menu-content-footer-item-label" v-if="language === lang.en">Logout</h3>
+          <h3 class="pop-up-menu-content-footer-item-label" v-if="language === lang.sw">Toka</h3>
         </div>
         <div class="pop-up-menu-content-footer-item" @click="$emit('close')">
           <i class="fa fa-cog"></i>
-          <h3 class="pop-up-menu-content-footer-item-label">Settings</h3>
+          <h3 class="pop-up-menu-content-footer-item-label" v-if="language === lang.en">Settings</h3>
+          <h3 class="pop-up-menu-content-footer-item-label" v-if="language === lang.sw">Mipangilio</h3>
         </div>
         <NuxtLink to="/about" class="pop-up-menu-content-footer-item" @click="$emit('close')">
           <i class="fa fa-question-circle"></i>
-          <h3 class="pop-up-menu-content-footer-item-label">About</h3>
+          <h3 class="pop-up-menu-content-footer-item-label" v-if="language === lang.en">About</h3>
+          <h3 class="pop-up-menu-content-footer-item-label" v-if="language === lang.sw">Kuhusu</h3>
         </NuxtLink>
       </div>
     </div>

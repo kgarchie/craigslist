@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {lang} from "~/types";
+
 defineProps({
   item: {
     type: Object as PropType<{
@@ -13,6 +15,8 @@ defineProps({
     required: false
   }
 })
+
+const language = useLanguage()
 </script>
 
 <template>
@@ -42,14 +46,16 @@ defineProps({
           </div>
           <div class="rooms">
             <i class="fa fa-door-open"></i>
-            <p>2 bedrooms</p>
+            <p v-if="language === lang.en">2 bedrooms</p>
+            <p v-if="language === lang.sw">Vyumba 2</p>
           </div>
           <div class="price">
             <i class="fa fa-dollar-sign"></i>
             <p>{{ item?.price }}</p>
           </div>
           <div class="about">
-            <h3>About</h3>
+            <h3 v-if="language === lang.en">About</h3>
+            <h3 v-if="language === lang.sw">Kuhusu</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Quisquam, quod.</p>
           </div>

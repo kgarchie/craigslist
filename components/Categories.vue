@@ -1,46 +1,56 @@
 <script setup lang="ts">
+import {lang} from "~/types";
+
 const housing = ref<string>('/listings/housing')
+const language = useLanguage()
 </script>
 
 <template>
   <div class="categories">
     <div class="categories__container">
-      <h1>What are you looking for?</h1>
+      <h1 v-if="language === lang.en">What are you looking for?</h1>
+      <h1 v-if="language === lang.sw">Watafuta nini?</h1>
       <ul class="categories__list">
         <li class="category">
           <NuxtLink class="category__link" :to="housing">
             <i class="fa-solid fa-house"></i>
-            <span class="category__label">Housing</span>
+            <span class="category__label" v-if="language === lang.en">Housing</span>
+            <span class="category__label" v-if="language === lang.sw">Nyumba</span>
           </NuxtLink>
         </li>
         <li class="category">
           <NuxtLink to="/listings" class="category__link">
             <i class="fa-solid fa-car"></i>
-            <span class="category__label">Cars</span>
+            <span class="category__label" v-if="language === lang.en">Cars</span>
+            <span class="category__label" v-if="language === lang.sw">Magari</span>
           </NuxtLink>
         </li>
         <li class="category">
           <NuxtLink to="/listings" class="category__link">
             <i class="fa-solid fa-briefcase"></i>
-            <span class="category__label">Jobs</span>
+            <span class="category__label" v-if="language === lang.en">Jobs</span>
+            <span class="category__label" v-if="language === lang.sw">Kazi</span>
           </NuxtLink>
         </li>
         <li class="category">
           <NuxtLink to="/listings" class="category__link">
             <i class="fa-solid fa-tshirt"></i>
-            <span class="category__label">Clothing</span>
+            <span class="category__label" v-if="language === lang.en">Clothing</span>
+            <span class="category__label" v-if="language === lang.sw">Mavazi</span>
           </NuxtLink>
         </li>
         <li class="category">
           <NuxtLink to="/listings" class="category__link">
             <i class="fa-solid fa-mobile-android"></i>
-            <span class="category__label">Electronics</span>
+            <span class="category__label" v-if="language === lang.en">Electronics</span>
+            <span class="category__label" v-if="language === lang.sw">Elektroniki</span>
           </NuxtLink>
         </li>
         <li class="category">
           <NuxtLink to="/listings" class="category__link">
             <i class="fa-solid fa-tools"></i>
-            <span class="category__label">Services</span>
+            <span class="category__label" v-if="language === lang.en">Services</span>
+            <span class="category__label" v-if="language === lang.sw">Huduma</span>
           </NuxtLink>
         </li>
       </ul>

@@ -1,11 +1,12 @@
 <template>
-  <Title>About</Title>
+  <Title v-if="language === lang.en">About</Title>
+  <Title v-if="language === lang.sw">Kuhusu</Title>
   <div class="team">
     <div class="team-member" v-for="(user, index) in users" :key="index">
       <img :src="user.avatar" alt="team member"/>
       <h3 class="name">{{ user.name }}</h3>
       <p class="email">{{ user.email }}</p>
-      <span class="role">{{user.role}}</span>
+      <span class="role">{{ user.role }}</span>
       <div>
         <h3 class="quote">{{ user.quote }}</h3>
         <div class="links">
@@ -24,7 +25,8 @@
 </template>
 <script setup lang="ts">
 import {User} from "~/db/users";
-
+import {lang} from "~/types";
+const language = useLanguage()
 const users = ref<User[]>([])
 const response = await $fetch('/api/users') as { statusCode: number, users: User[] }
 if (response?.statusCode === 200) users.value = response.users
@@ -71,7 +73,7 @@ if (response?.statusCode === 200) users.value = response.users
 
     .name,
     .email,
-    .text{
+    .text {
       margin: 0;
       color: white;
     }
@@ -83,20 +85,20 @@ if (response?.statusCode === 200) users.value = response.users
       color: rgba(255, 255, 255, 0.8);
     }
 
-    .email{
+    .email {
       font-size: 1rem;
       font-weight: 400;
       color: #afafaf;
     }
 
-    .role{
+    .role {
       color: #ccc;
       background-color: rgb(13, 17, 23);
       padding: 0.25rem 0.5rem;
       font-size: 1rem;
     }
 
-    >div{
+    > div {
       .quote {
         font-size: 1.2rem;
         font-weight: 400;
@@ -115,13 +117,13 @@ if (response?.statusCode === 200) users.value = response.users
         }
       }
 
-      .links{
+      .links {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 1rem;
 
-        a{
+        a {
           display: flex;
           align-items: center;
           gap: 0.25rem;
@@ -131,30 +133,30 @@ if (response?.statusCode === 200) users.value = response.users
           border-radius: 5px;
           margin: 0 0.5rem;
 
-          &.github{
+          &.github {
             background-color: rgba(13, 17, 23, 0.7);
 
-            &:hover{
+            &:hover {
               background-color: rgba(13, 17, 23, 1);
             }
           }
 
-          &.linkedin{
+          &.linkedin {
             background-color: rgba(0, 119, 181, 0.7);
 
-            &:hover{
+            &:hover {
               background-color: rgba(0, 119, 181, 1);
             }
           }
         }
 
-        span{
+        span {
           font-size: 1.05rem;
           font-weight: 600;
           color: white;
         }
 
-        i{
+        i {
           font-size: 1.5rem;
           color: white;
         }

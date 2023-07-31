@@ -25,6 +25,8 @@
   </NuxtLink>
 </template>
 <script setup lang="ts">
+const language = useLanguage()
+
 defineProps({
   item: {
     type: Object as PropType<{
