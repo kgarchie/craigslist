@@ -56,8 +56,11 @@ const language = useLanguage()
           <div class="about">
             <h3 v-if="language === lang.en">About</h3>
             <h3 v-if="language === lang.sw">Kuhusu</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Quisquam, quod.</p>
+            <p>Ever since my wife died, living in this house has been torture. It's like her ghost is haunting me, I think I see her sometimes.
+              I'm distraught, our souls were alike, she was more of myself than I was. When she was alive back then, when I thought of her, I was not building airs for my own enjoyment,
+              rather my heart rejoiced that she was with me. I adored her. I loved her. I cherished her. I was happy.
+              Now that she's gone and everything in this place keeps reminding me of how happy I was and that opens up wounds. I want to rid myself off it.
+              That's why I'm selling it. Oh, don't worry about me, I'll go live by the forest, hopefully I will find solace in my primal beast</p>
           </div>
         </div>
       </div>
