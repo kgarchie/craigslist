@@ -56,8 +56,8 @@ const language = useLanguage()
           <div class="about">
             <h3 v-if="language === lang.en">About</h3>
             <h3 v-if="language === lang.sw">Kuhusu</h3>
-            <p>Ever since my wife died, living in this house has been torture. It's like her ghost is haunting me, I think I see her sometimes.
-              I'm distraught, whatever souls are made of ours were made of the same stuff, I could say we were alike but she was more of myself than I was.
+            <p>Ever since my wife died, living in this house has been torture. It's like her ghost is haunting me, I think I see her sometimes. I bet it's hallucinations, wait, I'm not crazy, I'm not crazy, I'm not crazy.
+              I'm just distraught, whatever souls are made of, ours were made of the same stuff, I could say we were alike but she was more of myself than I was.
               When she was alive, and I thought of her, I was not building airs for my own enjoyment,
               rather my heart rejoiced that she was with me, my body would swear to bend over backwards for her. I adored her. I loved her. I cherished her. I was happy.
               Now that she's gone, everything in this place keeps reminding me of how happy I was and that opens up wounds that i do not care to heal. I just want to rid myself off all of it.
